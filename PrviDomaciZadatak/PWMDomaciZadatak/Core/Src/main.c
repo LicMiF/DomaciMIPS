@@ -32,8 +32,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define pin4 GPIO_PIN_4
-#define brojSlovaUImenu 6
-#define brojSlovaUPrezimenu 15
+#define brojSlovaUImenu 5
+#define brojSlovaUPrezimenu 5
 
 
 /* USER CODE END PD */
@@ -46,9 +46,10 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-int TA=brojSlovaUImenu*100;
-int TP=brojSlovaUPrezimenu*100;
+int TA=brojSlovaUImenu;
+int TP=brojSlovaUPrezimenu;
 int cycleCnt=0;
+int name=1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -105,12 +106,13 @@ int main(void)
 	  HAL_GPIO_WritePin(GPIOB, pin4, GPIO_PIN_RESET);
 	  HAL_Delay(TP);
 	  cycleCnt++;
-	  if(cycleCnt==brojSlovaUImenu)
+	  if((name && cycleCnt==brojSlovaUImenu) || (!name && cycleCnt==brojSlovaUPrezimenu))
 	  {
 		  int tmp=TA;
 		  TA=TP;
 		  TP=tmp;
 		  cycleCnt=0;
+		  name=!name;
 	  }
 
     /* USER CODE BEGIN 3 */
