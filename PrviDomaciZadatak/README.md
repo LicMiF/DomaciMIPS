@@ -9,6 +9,6 @@ Pin porta se bira kao moduo zbira slova u imenu i prezimenu i broja 6 (BROJ_SLOV
 Preostalo je samo opredeliti se za intervale pauze kao i aktivnog naponskog nivoa impulsno širinske modulacije. U postavci je navedeno da se dati intervali biraju u skladu sa brojem slova u imenu i prezimenu, a kako je u autorovom slučaju taj broj jednak onda će i vreme trajanja pauze i aktivnog naposkog nivoa biti isto (5ms).
 Širina impulsa će biti 50% ciklusa.
 
-Kako je dalje u postavci navedeno, potrebno je nakon određenog broja ciklusa promeniti širinu impulsa tako što će sada vreme trajanja pauze biti vreme trajanja aktivnog naponskog nivoa a vreme trajanja aktivnog naponskog nivoa će sada postati vreme trajanja pauze. Broj ciklusa nakon koga se dešava ova promena jednak je broju slova u imenu (5).
+Kako je dalje u postavci navedeno, potrebno je nakon određenog broja ciklusa promeniti širinu impulsa tako što će sada vreme trajanja pauze biti vreme trajanja aktivnog naponskog nivoa a vreme trajanja aktivnog naponskog nivoa će sada postati vreme trajanja pauze. Broj ciklusa nakon koga se dešava ova promena jednak je broju slova u imenu (5) i kako bi došlo do naredne zamene dužina intervala impulsa i pauze potrebno je da prođe broj ciklusa jednak broju slova u prezimenu(5). Ovaj proces se ponavlja naizmenično.
 
 Za realizaciju traženog efekta, koristila se funkcija HAL_Delay() biblioteke HAL. 
