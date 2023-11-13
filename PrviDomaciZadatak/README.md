@@ -1,4 +1,4 @@
-#PWM domaći zadatak iz mikroprocesorskih sistema. 
+# PWM domaći zadatak iz mikroprocesorskih sistema. 
 
 Zadatak je fokusiran na implementaciji PWM (Pulse Width Modulation). Potrebno je, u okviru Proteus-a, dodati LED diodu koja će simulirati rad impulsno širinske modulacije, dodati otpornik (koji bi trebalo da poseduje odgovarajuću snagu disipacije kao i otpornost), dodati uzemljenje i povezati anodu diode na odgovarajući pin.
 Port mikrokontrolera (STM32F103C6) se bira u skladu sa brojem samoglasnika/suglasnika u imenu i prezimenu autora (Filip Milić). Kako je u postavci navedeno, ukoliko je broj suglasnika veći od broja samoglasnika, za port se uzima port B, a kako je upravo to slučaj sa autorovim imenenom i prezimenom, isti se odlučio za port B.
