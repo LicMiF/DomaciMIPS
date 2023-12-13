@@ -107,7 +107,7 @@ Sadržaj funkcije HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim), koja s
 Na slici se nalaze svi moguci režimi rada motora 1, koje određuje promenljiva task. U ovaj deo funkcije se ulazi po isteku 5 μs, što je najmanja moguća dužina trajanja visokog ili niskog naponskog nivoa navedena u datasheet-u (Videti vremenski dijagram signala).
 
 
-![ISR timer 2](./Images/Timer1Intr.PNG)
+![ISR timer 2](./Images/Tim1Intr.PNG)
 
 
 Promenljive toggleCounter i position se koriste za pracenje pozicije motora 1, u odnosu na početnu, za koju se pretpostavilo da se nalazi na mestu prvog člana niza sa epruvetama. Pozicija se menja tek nakon isteka jedne periode pulsnog signala (jedan korak (uslov toggleCounter%2==0)).
