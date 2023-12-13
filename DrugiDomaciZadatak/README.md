@@ -3,11 +3,11 @@
 
 Hardverske komponente korišćene u izradi projekta :
 
--STM32F103C6
--ULN2803A
--LM35 (Temperaturni senzor)
--ABLS-8.000MHZ-B4-T (Kristalni oscilator 8MHz)
--DP-708 (2 Drajvera za koračne motore)
+- STM32F103C6
+- ULN2803A
+- LM35 (Temperaturni senzor)
+- ABLS-8.000MHZ-B4-T (Kristalni oscilator 8MHz)
+- DP-708 (2 Drajvera za koračne motore)
 
 
 Za komponentu ULN2803A sam se odlučio iz razloga što se aktivna vrednost ulaznih pinova nalazi u opsegu bliskom 3V (Kolektorska struja Ic=300mA). Za temperaturni senzor sam se odlučio iz praktičnih razloga, dovoljno je dovesti Vout signal pravo na pin mikrokontrolera koji je konfigurisan kao ADC kanal. Ostale komponente sam birao po principu FCFS(First come first serve). 
@@ -23,43 +23,43 @@ Pinovi mikrokontrolera STM32F103C6 korišćeni u realizaciji kao i konfiguracija
 
 
 Izlazni pinovi namenjeni drajverima motora:
--PA1  (Pulsni signal namenjen drajveru motora 1)
--PA2  (Signal smera okretanja namenjen drajveru motora 1)
--PA3  (Enable signal namenjen drajveru motora 1)
--PA4  (Pulsni signal namenjen drajveru motora 2)
--PA5  (Signal smera okretanja namenjen drajveru motora 2)
--PA6  (Enable signal namenjen drajveru motora 2)
+- PA1  (Pulsni signal namenjen drajveru motora 1)
+- PA2  (Signal smera okretanja namenjen drajveru motora 1)
+- PA3  (Enable signal namenjen drajveru motora 1)
+- PA4  (Pulsni signal namenjen drajveru motora 2)
+- PA5  (Signal smera okretanja namenjen drajveru motora 2)
+- PA6  (Enable signal namenjen drajveru motora 2)
 
 
 Ulazni pinovi konfigurisani tako da reaguju na prekide po očitanoj uzlaznoj ivici:
--PB1 (Pritiskom korisnik se odlučuje za epruvetu labelisanu nulom)
--PB2 (Pritiskom korisnik se odlučuje za epruvetu labelisanu jedinicom)
--PB3 (Pritiskom korisnik se odlučuje za epruvetu labelisanu dvojkom)
--PB4 (Pritiskom korisnik se odlučuje za epruvetu labelisanu trojkom)
--PB5 (Pritiskom korisnik se odlučuje za epruvetu labelisanu četvorkom)
+- PB1 (Pritiskom korisnik se odlučuje za epruvetu labelisanu nulom)
+- PB2 (Pritiskom korisnik se odlučuje za epruvetu labelisanu jedinicom)
+- PB3 (Pritiskom korisnik se odlučuje za epruvetu labelisanu dvojkom)
+- PB4 (Pritiskom korisnik se odlučuje za epruvetu labelisanu trojkom)
+- PB5 (Pritiskom korisnik se odlučuje za epruvetu labelisanu četvorkom)
 
 
 *Napomena: Korisnik može promeniti trenutno podešenu epruvetu, čak i tokom procesa traženja prethodne (Okretanja cilindra sa epruvetama)
 
 
 Pinovi korišćeni za eksterni takt visoke brzine (8MHz):
--OSCIN_PD0
--OSCOUT_PD1
+- OSCIN_PD0
+- OSCOUT_PD1
 
 
 Pin konfigurisan kao kanal 8 analogno digitalnog konvertora 1:
--PB0
+- PB0
 
 
 2 Tajmera:
 - Jedan (TIM2) konfigurisan da generiše impulse svakih 5 μs (Minimalna dužina visokog , kao i niskog naponskog nivoa navedena u datasheet-u korišćenog drajvera koračnog motora)
--Radi u režimu internog takta, sa frekvencijom 32 MHz , vrednosti prescaler-a kao i autoreload registra su:
+  Radi u režimu internog takta, sa frekvencijom 32 MHz , vrednosti prescaler-a kao i autoreload registra su:
     pre=160
     arr=1
 
 
--Drugi (TIM3) je konfigurisan da diktira periodu AD konverzije, svake 2 sekunde
--Radi u režimu internog takta, sa frekvencijom 32 MHz , vrednosti prescaler-a kao i autoreload registra su:
+- Drugi (TIM3) je konfigurisan da diktira periodu AD konverzije, svake 2 sekunde
+  Radi u režimu internog takta, sa frekvencijom 32 MHz , vrednosti prescaler-a kao i autoreload registra su:
     pre=10000
     arr=6400
 
@@ -68,7 +68,7 @@ Pin konfigurisan kao kanal 8 analogno digitalnog konvertora 1:
 Pojašnjenje firmware-a:
 
 
--Glavni deo programa je implementiran na principu mašine konačnih stanja:
+*Glavni deo programa je implementiran na principu mašine konačnih stanja:
 
 
 ![Input output configuration](./Images/FSM.PNG)
