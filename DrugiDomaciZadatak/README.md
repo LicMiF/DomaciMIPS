@@ -52,9 +52,9 @@ Pin konfigurisan kao kanal 8 analogno digitalnog konvertora 1:
 
 
 2 Tajmera:
-- Jedan (TIM2) konfigurisan da generiše impulse svakih 5 μs (Minimalna dužina visokog , kao i niskog naponskog nivoa navedena u datasheet-u korišćenog drajvera koračnog motora)
+- Jedan (TIM2) konfigurisan da generiše impulse svakih 1.2 μs (Minimalna dužina visokog , kao i niskog naponskog nivoa navedena u datasheet-u korišćenog drajvera koračnog motora)
   Radi u režimu internog takta, sa frekvencijom 32 MHz , vrednosti prescaler-a kao i autoreload registra su:
-    pre=160
+    pre=39
     arr=1
 
 
@@ -104,7 +104,7 @@ Kao argumenti joj se prosledjuju željeni motor (1 ili 2), kao i smer njegovog o
 
 Sadržaj funkcije HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim), koja se poziva po generisanom prekidu sa jednog od aktiviranih tajmera po isteku odgovarajućeg intervala, je podeljen na više delova, shodno tajmeru sa kojeg stiže prekid. 
 
-Na slici se nalaze svi moguci režimi rada motora 1, koje određuje promenljiva task. U ovaj deo funkcije se ulazi po isteku 5 μs, što je najmanja moguća dužina trajanja visokog ili niskog naponskog nivoa navedena u datasheet-u (Videti vremenski dijagram signala).
+Na slici se nalaze svi moguci režimi rada motora 1, koje određuje promenljiva task. U ovaj deo funkcije se ulazi po isteku 1.2 μs, što je najmanja moguća dužina trajanja visokog ili niskog naponskog nivoa navedena u datasheet-u (Videti vremenski dijagram signala).
 
 
 ![ISR timer 2](./Images/Tim1Intr.PNG)
