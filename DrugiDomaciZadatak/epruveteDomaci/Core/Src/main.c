@@ -499,28 +499,28 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-    /* USER CODE END WHILE */
-	  switch(state)
-	  {
-		  case idle:
-			  //Here something else could be done
-			  break;
-		  case heating:
-			  heat();
-			  break;
-		  case calibrating:
-			  calibrate();
-			  break;
-		  case locating:
-			  locate();
-			  break;
-		  case shifting:
-			  shift();
-			  break;
-	  }
-    /* USER CODE BEGIN 3 */
-  }
+    {
+      /* USER CODE END WHILE */
+  	  switch(state)
+  	  {
+  		  case idle:
+  			  //Here something else could be done
+  			  break;
+  		  case heating:
+  			  heat();
+  			  break;
+  		  case calibrating:
+  			  calibrate();
+  			  break;
+  		  case locating:
+  			  locate();
+  			  break;
+  		  case shifting:
+  			  shift();
+  			  break;
+  	  }
+      /* USER CODE BEGIN 3 */
+    }
   /* USER CODE END 3 */
 }
 
@@ -636,7 +636,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 160;
+  htim2.Init.Prescaler = 39;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

@@ -16,7 +16,7 @@ Sve napone napajanja na šemi sam prilagodio datasheetovima-odgovarajucih kompon
 
 
 Pinovi mikrokontrolera STM32F103C6 korisceni u realizaciji kao i konfiguracija takta :
-![Input output configuration](/Images/IOC.PNG)
+![Input output configuration](/Images/IOCf.PNG)
 
 Izlazni pinovi namenjeni drajverima motora:
 -PA1  (Pulsni signal namenjen drajveru motora 1)
